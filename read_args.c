@@ -6,7 +6,7 @@
 /*   By: ryishii <ryishii@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 06:19:51 by ryishii           #+#    #+#             */
-/*   Updated: 2021/03/22 01:30:17 by ryishii          ###   ########.fr       */
+/*   Updated: 2021/03/22 02:54:14 by ryishii          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void    initialize_args(t_args *args)
     args->has_pre = 0;
     args->width = 0;
     args->pre = 0;
+    args->fill_zero = 0;
+    args->align_left = 0;
+    args->putlen = 0;
 }
 
 char    *ft_get_flag(t_args *args, char *itr)
@@ -61,7 +64,11 @@ void    ft_get_pre(t_args *args, char **itr, va_list ap)
     args->pre = (**itr == '*') ? va_arg(ap, int) : ft_atoi(*itr);
     if (args->pre < 0)
         args->has_pre = 0;
-    *itr += (**itr == '*') ? 1 : ft_get_digit(args->pre);
+    if (**itr == '*')
+		(*itr)++;
+	else
+		while (ft_isdigit(**itr))
+			(*itr)++;
 }
 
 char    *read_args(t_args *args, char *itr, va_list ap, int *res)

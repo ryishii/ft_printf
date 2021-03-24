@@ -6,14 +6,14 @@
 /*   By: ryishii <ryishii@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 17:51:50 by ryishii           #+#    #+#             */
-/*   Updated: 2021/03/22 01:30:18 by ryishii          ###   ########.fr       */
+/*   Updated: 2021/03/22 02:03:39 by ryishii          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int     ft_put_strl(char *str, int len)
+int     ft_putstrl(char *str, int len)
 {
     int     res;
     int     i;
