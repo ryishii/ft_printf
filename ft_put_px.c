@@ -6,7 +6,7 @@
 /*   By: ryishii <ryishii@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 23:15:55 by ryishii           #+#    #+#             */
-/*   Updated: 2021/03/25 01:56:56 by ryishii          ###   ########.fr       */
+/*   Updated: 2021/03/25 02:33:54 by ryishii          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		ft_putx(unsigned long ud, int padding, char c)
 	if (ud % 16 >= 10)
 		res += ft_putchar((ud % 16) - 10 + c);
 	else
-		res+= ft_putchar(ud % 16 + '0');
+		res += ft_putchar(ud % 16 + '0');
 	return (res);
 }
 
